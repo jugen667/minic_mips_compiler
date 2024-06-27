@@ -68,12 +68,15 @@ passe_2.o: $(SRC_DIR)/passe_2.c $(INC_DIR)/passe_2.h $(INC_DIR)/arch.h $(INC_DIR
 
 clean: 
 	@echo "| Cleaning all files"
+	@echo "| Cleaning binary"
+	@rm -f $(EXE)
 	@echo "| Cleaning .o files"
 	@rm -f *.o
 	@echo "| Cleaning lex and grammar files"
 	@rm -f $(SRC_DIR)/y.tab.c $(INC_DIR)/y.tab.h $(SRC_DIR)/lex.yy.c 
 	@echo "| Cleaning built files"
-	@rm -f out.s apres_passe_1.dot apres_syntaxe.dot
+	@rm -f *.s *.dot
+	@rm -rf tools/graph-last-program
 	@echo "| Cleaning test files"
-	@rm -f  log.txt buffer.txt $(EXE)
+	@rm -f  tests/log.txt tests/buffer.txt tests/*.s tests/*.dot *.txt
 
