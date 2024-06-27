@@ -23,6 +23,6 @@ More about the language under grammar/rules.md
 ## About the author
 This repo is a fork of [this project](https://github.com/thomasrPPS/Compilation_pj_Genty_Rio)
 
-Started as a school project, I decided to fork this project to carry on and add the missing features.
+Started as a school project, I decided to fork this project to carry on, clarify its stucture and add the missing features.
 
 We are both former embedded system student and enthusiast about working around low-level programming 
