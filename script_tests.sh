@@ -77,7 +77,7 @@ rm buff.txt
 
 rm buffer.txt
 
-echo "Si aucun numéro de test s'affiche c'est qu'il n'y a pas eu d'erreurs .Voir le fichier log.txt pour regarder les sorties des tests sur notre compilateur avec les lignes des erreurs"
+echo "Si aucun numéro de test s'affiche c'est qu'il n'y a pas eu d'erreurs. Voir le fichier log.txt pour regarder les sorties des tests sur notre compilateur avec les lignes des erreurs"
 diff -a log.txt  results_ref.txt > buffer.txt
 BUFFER=$(cat buffer.txt) 
 if [ -z "$BUFFER" ]
