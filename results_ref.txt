@@ -1,5 +1,0 @@
-G_KO 1 :ce print doit s'afficher
-G_KO 2 :ce print doit s'afficher
-G_KO 3 :ce print doit s'affichererreur si visible
-G_KO 4 :ce print doit s'affichererreur si visible
-G_KO 5 :ce print doit s'affichererreur si visible
