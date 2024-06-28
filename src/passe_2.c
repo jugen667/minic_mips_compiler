@@ -57,7 +57,6 @@ void create_print_syscall(node_t node){
 			}
 			else{
 				inst_create_lw(4, node->opr[i]->offset , 29);
-				printf("%d\n", node->opr[i]->offset);
 			}
 			inst_create_ori(2, 0, 0x1);
 			inst_create_syscall();
@@ -1807,7 +1806,7 @@ void gen_code_passe_2(node_t root) {
 		}
 		// creation of label for 'if' statement
 		if(root->nature == NODE_IF){
-			if(parsingLoopIf == root->nops-1){
+			if (parsingLoopIf == root->nops-1){
 				label++;
 				inst_create_label(label);	
 				parsingLoopIf = 0;
