@@ -5,7 +5,7 @@ This file describes the MiniC rules
 > Rules can change and evolve (or regress)
 
 ## What is MiniC ?
-MiniC is a <u>subset of C</u>used fot simple program and as a proof-of-concept for a compiler. It has the same syntax.
+MiniC is a <u>subset of C</u> used fot simple program and as a proof-of-concept for a compiler. It has the same syntax.
 MiniC allows global variables, a *main()* function, loops, branches and *print()*.
 However, it is a very primitive language and thus its functionnalities are limited.
 
@@ -62,7 +62,7 @@ These loops and branches have the same syntax as C
 - **Direct Assignement** (=)
 - **Comma** as a separator for definition and assignement 
 > Ex : int a = 1 **,** int b = 2;
-- **Comment** (//, /*...*/)
+- **Comment** (// **only**)
 
 ### Not Supported 
 - **Incremental operators** (++, --)
