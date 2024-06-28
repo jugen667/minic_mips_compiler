@@ -51,12 +51,13 @@ void create_print_syscall(node_t node){
 		}
 		// printing a ident
 		else if(node->opr[i]->nature == NODE_IDENT){
-			if(node->opr[0]->global_decl){
+			if(node->opr[i]->global_decl){
 				inst_create_lui(4, 0x1001);
-				inst_create_lw(4, node->opr[0]->offset , 4);
+				inst_create_lw(4, node->opr[i]->offset , 4);
 			}
 			else{
-				inst_create_lw(4, node->opr[0]->offset , 29);
+				inst_create_lw(4, node->opr[i]->offset , 29);
+				printf("%d\n", node->opr[i]->offset);
 			}
 			inst_create_ori(2, 0, 0x1);
 			inst_create_syscall();
