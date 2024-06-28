@@ -422,6 +422,16 @@ void analyse_passe_1(node_t root) {
 			check_affect_type(root);
 			declaration = 0;
 		}
+		
+		// case if(...) else ...
+		if(root->nature == NODE_IF && root->nops == 3){
+			// if 3 node then 3rd is else stamenet
+			printf("Debug >> Nops %d\n", root->nops);
+			for(int i=0;i<root->nops;i++){
+        			printf("Debug >> Nopr %d %d\n", i, root->opr[i]->nature);
+    			}
+			root->opr[2]->nature = NODE_ELSE;
+		}
 
 		// check if the type is the same for the two arguments
 		if(	root->nature == NODE_EQ ||

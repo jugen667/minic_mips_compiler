@@ -234,10 +234,11 @@ static int32_t dump_tree2dot_rec(FILE * f, node_t n, int32_t node_num) {
         case NODE_NOT:
         case NODE_BNOT:
         case NODE_UMINUS:
-        case NODE_AFFECT:
+	case NODE_ELSE:
+	case NODE_AFFECT:
             fprintf(f, "    N%d [shape=record, label=\"{{NODE %s|Type: %s|Nb. ops: %d}}\"];\n", node_num, node_nature2string(n->nature), node_type2string(n->type), n->nops);
             break;
-        default:
+	default:
             printf("*** Error in %s: unknow nature : %s\n", __func__, node_nature2string(n->nature));
             assert(false);
     }
@@ -376,7 +377,9 @@ const char * node_nature2string(node_nature t) {
             return "AFFECT";
         case NODE_PRINT:
             return "PRINT";
-        default:
+	case NODE_ELSE:
+	    return "ELSE";
+	default:
             fprintf(stderr, "*** Error in %s: Unknown node nature: %d\n", __func__, t);
             exit(1);
     }
