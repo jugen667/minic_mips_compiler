@@ -8,14 +8,16 @@ GRA_DIR:=grammar
 DEBUG_LEX=0 
 DEBUG_YACC=0
 
+YACC_FLAGS=
+LEX_FLAGS=
+
+
 ifeq ($(DEBUG_LEX),1)
 	YACC_FLAGS=
 	LEX_FLAGS=-DLEX_DEBUG=1
-else ifeq ($(DEBUG_YACC),1)
+endif
+ifeq ($(DEBUG_YACC),1)
 	YACC_FLAGS=-DYYDEBUG=1
-	LEX_FLAGS=-d
-else
-	YACC_FLAGS=
 	LEX_FLAGS=
 endif
 
@@ -39,7 +41,7 @@ y.tab.c: $(GRA_DIR)/grammar.y Makefile
 	@mv y.tab.h $(INC_DIR)
 
 lex.yy.c: $(GRA_DIR)/lexico.l Makefile
-	@echo "| lex $(LEX_FLAGS) lexico.l"
+	@echo "| lex $(LEX_FLAGS) -d lexico.l"
 	@lex -o $(SRC_DIR)/lex.yy.c $(LEX_FLAGS) $(GRA_DIR)/lexico.l
 
 lex.yy.o: lex.yy.c
