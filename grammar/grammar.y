@@ -81,7 +81,7 @@ node_t make_node_strval(char* string);
 
 %%
 
-/* tree creaion  */
+/* tree creation  */
 program:    
         listdeclnonnull maindecl
         {
@@ -192,7 +192,7 @@ inst        : expr TOK_SEMICOL
             }
             | TOK_IF TOK_LPAR expr TOK_RPAR inst TOK_ELSE inst
             {
-                $$ = make_node(NODE_IF, 3 , $3, $5, $7);
+                $$ = make_node(NODE_IF, 3, $3, $5, $7);
             }
             | TOK_IF TOK_LPAR expr TOK_RPAR inst %prec TOK_THEN
             {
