@@ -13,6 +13,18 @@ MiniC is a sub-language of C.
 
 More about the language under [grammar/rules.md](https://github.com/jugen667/minic_compiler/blob/master/grammar/rules.md)
 
+## How to use
+
+- Create the **binary** : ```make all``` -> creation of the binary **minicc** in ```bin``` folder
+
+- Compile a MiniC program : In ```compil_minic``` folder, run ```bin/minicc <file-name>``` -> creation of a MIPS assembly file ```out.s``` 
+
+- Compiler option : run ```bin/minicc -h``` to display the option list
+
+- Run the ```out.s``` file with Mars : ```java -jar tools/Mars_4_2.jar out.s``` (you will need to have Java installed)
+
+- Create the visual graph of the program : ```cd tools/ && ./graph-create.sh```, the ouput will be located in ```tools/graph-last-program```
+
 ## Known Issues
 - **Un-portable on Windows**
 *miniccutils.a* is a static lib not ported on Windows, the project won't compile on a Windows System
@@ -24,7 +36,7 @@ More about the language under [grammar/rules.md](https://github.com/jugen667/min
 
 - ***else*** statements not translated to assembly
 
--~~**Wrong offset on *print()*** : sometimes the variable printed via the *print()* function is the wrong one, due to an offset miscalculation~~
+- ~~**Wrong offset on *print()*** : sometimes the variable printed via the *print()* function is the wrong one, due to an offset miscalculation~~
 
 
 ## About the author
