@@ -56,7 +56,7 @@ node_t make_node_strval(char* string);
 %token TOK_SEMICOL TOK_COMMA TOK_LPAR TOK_RPAR TOK_LACC TOK_RACC
 %token TOK_STRING TOK_DO
 
-/* A completer */
+
 %nonassoc TOK_THEN
 %nonassoc TOK_ELSE 
 
@@ -70,7 +70,7 @@ node_t make_node_strval(char* string);
 %left TOK_EQ TOK_NE
 %nonassoc TOK_GT TOK_LT TOK_GE TOK_LE
 %nonassoc TOK_SRL TOK_SRA TOK_SLL
-/* a / b / c = (a / b) / c et a - b - c = (a - b) - c */
+/* a / b / c = (a / b) / c AND a - b - c = (a - b) - c */
 %left TOK_PLUS TOK_MINUS
 %left TOK_MUL TOK_DIV TOK_MOD
 %nonassoc TOK_UMINUS TOK_NOT TOK_BNOT
@@ -81,7 +81,7 @@ node_t make_node_strval(char* string);
 
 %%
 
-/* Completer les regles et la creation de l'arbre */
+/* tree creaion  */
 program:    
         listdeclnonnull maindecl
         {
@@ -129,7 +129,7 @@ vardecl    : type listtypedecl TOK_SEMICOL
 type        : TOK_INT
         {
             $$ = make_node_type(TYPE_INT);
-        }
+        }	
         | TOK_BOOL
         {
             $$ = make_node_type(TYPE_BOOL);
@@ -485,10 +485,8 @@ void analyse_tree(node_t root) {
 }
 
 
-
-/* Cette fonction est appelee automatiquement si une erreur de syntaxe est rencontree
- * N'appelez pas cette fonction vous-meme :
- * la valeur donnee par yylineno ne sera plus correcte apres l'analyse syntaxique
+/* Automatically called when error 
+ * DON'T CALL IT : value given by yylineno won't be correct after syntaxe analysis
  */
 void yyerror(node_t * program_root, char * s) {
     fprintf(stderr, "Error line %d: %s\n", yylineno, s);
