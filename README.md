@@ -24,7 +24,7 @@ More about the language under [grammar/rules.md](https://github.com/jugen667/min
 
 - ***else*** statements not translated to assembly
 
-- **Wrong offset on *print()*** : sometimes the variable printed via the *print()* function is the wrong one, due to an offset miscalculation
+-~~**Wrong offset on *print()*** : sometimes the variable printed via the *print()* function is the wrong one, due to an offset miscalculation~~
 
 
 ## About the author
