@@ -1,6 +1,6 @@
 # MiniC Compiler
 
-Compiler for a simplified version of C (not maintained anymore)
+Compiler for a simplified version of C on MIPS (not maintained anymore)
 
 ## Main features
 
