@@ -1,6 +1,8 @@
 # MiniC Compiler
 
-Compiler for a simplified version of C on MIPS (not maintained anymore)
+Compiler for a simplified version of C on MIPS
+> [!NOTE]
+> This project is not maintained anymore (maybe in the future, I'm not motivated right now)
 
 ## Main features
 
